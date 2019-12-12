@@ -9,6 +9,7 @@ const authMiddleware = require("./middlewares/auth");
 
 routes.post("/usuario", UserController.store);
 routes.post("/sessions", SessionController.store);
+routes.get("/service", ServiceController.index);
 routes.use(authMiddleware);
 
 
@@ -16,7 +17,7 @@ routes.post("/cliente", ClienteController.store);
 routes.get("/cliente", ClienteController.list);
 
 routes.post("/service", ServiceController.store);
-routes.get("/service", ServiceController.index);
+
 routes.get("/usuario", UserController.list);
 routes.get("teste", (req, res) => res.json({ ok: true }));
 module.exports = routes;
